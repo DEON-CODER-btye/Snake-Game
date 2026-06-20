@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.snake {
+  background-color: green;
+}
+
+.food {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.cells {
+  border: none
+}
