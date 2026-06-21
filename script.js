@@ -33,7 +33,9 @@ function runBoard() {
   });
 
   setInterval(() => {
-    // Purani snake hatao
+
+
+
     snake.forEach((pos) => {
       cells[pos].classList.remove("snake");
     });
@@ -50,6 +52,23 @@ function runBoard() {
       newHead = snake[0] + 12;
     }
 
+    if (newHead < 0 || newHead > 143) {
+      return;
+    }
+
+    if (snake.includes(newHead)) {
+      window.location.reload()
+    }
+
+    if (newHead % 12 === 11 && direction === 'Right') {
+      alert('Game Over')
+      window.location.reload()
+    } else if (newHead % 12 === 0 && direction === 'Left') {
+      alert('Game Over')
+      window.location.reload()
+    }
+
+
     snake.unshift(newHead);
 
     if (snake[0] === food) {
@@ -59,7 +78,7 @@ function runBoard() {
 
       cells[food].classList.add("food");
 
-      // pop nahi karenge -> snake grow hogi
+
     } else {
       snake.pop();
     }
