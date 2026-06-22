@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 .snake {
-  background-color: green;
+  @apply bg-green-600 border-orange-50 border-2
 }
 
 .food {
   background-color: red;
-  border-radius: 50%;
+  border-radius: 999px;
+  width: 50%;
+  height: 50%;
+  /* font-size: 1px; */
 }
 
 .cells {

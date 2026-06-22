@@ -1,8 +1,10 @@
-let direction = "Right";
-let snake = [50];
 
 const board = document.querySelector(".board");
+const snakeScore = document.querySelector('.score')
 
+let direction = "Right";
+let snake = [50];
+let score = 0;
 function runBoard() {
   for (let i = 0; i < 144; i++) {
     const div = document.createElement("div");
@@ -18,24 +20,29 @@ function runBoard() {
   document.addEventListener("keydown", (e) => {
     switch (e.key) {
       case "ArrowRight":
-        direction = "Right";
+        if (direction !== "Left") {
+          direction = "Right";
+        }
         break;
       case "ArrowLeft":
-        direction = "Left";
+        if (direction !== "Right") {
+          direction = "Left";
+        }
         break;
       case "ArrowUp":
-        direction = "Up";
+        if (direction !== "Down") {
+          direction = "Up";
+        }
         break;
       case "ArrowDown":
-        direction = "Down";
+        if (direction !== "Up") {
+          direction = "Down";
+        }
         break;
     }
   });
 
   setInterval(() => {
-
-
-
     snake.forEach((pos) => {
       cells[pos].classList.remove("snake");
     });
@@ -57,33 +64,35 @@ function runBoard() {
     }
 
     if (snake.includes(newHead)) {
-      window.location.reload()
+      window.location.reload();
     }
 
-    if (newHead % 12 === 11 && direction === 'Right') {
-      alert('Game Over')
-      window.location.reload()
-    } else if (newHead % 12 === 0 && direction === 'Left') {
-      alert('Game Over')
-      window.location.reload()
+    if (snake[0] % 12 === 11 && direction === "Right") {
+      alert("Game Over");
+      window.location.reload();
+    } else if (snake[0] % 12 === 0 && direction === "Left") {
+      alert("Game Over");
+      window.location.reload();
     }
-
 
     snake.unshift(newHead);
 
     if (snake[0] === food) {
       cells[food].classList.remove("food");
 
-      food = Math.floor(Math.random() * 144);
+      do {
+        food = Math.floor(Math.random() * 144);
+      } while (snake.includes(food))
 
       cells[food].classList.add("food");
+      score++;
+      snakeScore.textContent = `Score: ${score}`
 
-
+      console.log(score);
     } else {
       snake.pop();
     }
 
-    // Snake draw karo
     snake.forEach((pos) => {
       cells[pos].classList.add("snake");
     });
@@ -92,4 +101,4 @@ function runBoard() {
   }, 500);
 }
 
-// runBoard();
+runBoard();
