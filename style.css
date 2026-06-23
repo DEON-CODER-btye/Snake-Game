@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .snake {
-  @apply bg-green-600 border-orange-50 border-2
+  @apply bg-green-500 border-orange-50 border-2 rounded-[40%]
 }
 
 .food {
@@ -9,9 +9,13 @@
   border-radius: 999px;
   width: 50%;
   height: 50%;
-  /* font-size: 1px; */
+
 }
 
 .cells {
   border: none
+}
+
+.snake-head {
+  @apply rounded-[40%] bg-gradient-to-br from-green-600 via-green-500 to-red-600
 }

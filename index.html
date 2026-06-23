@@ -12,16 +12,17 @@
     rel="stylesheet" />
 </head>
 
-<body class=" font-['Poppins'] text-green-500 bg-[#083163]">
-  <h1 class="text-6xl text-center mt-7 font-semibold"><span class="text-purple-500 ">Sn</span>ake Ga<span
+<body class=" font-['Poppins'] text-green-500 bg-[#083163] mx-5">
+  <h1 class="md:text-6xl  text-3xl text-center mt-7 font-semibold"><span class="text-purple-500 ">Sn</span>ake Ga<span
       class="text-purple-500">me</span> 🐍</h1>
-  <h3 class="score text-4xl text-end px-32 text-yellow-500 font-mono">Score: 0</h3>
+  <h3 class="score md:text-4xl text-2xl md:text-end text-center md:px-32 px-12 text-yellow-500 font-mono">Score: 0</h3>
   <div class="flex justify-center">
     <div
-      class="board bg-[#083163] opacity-75 w-full max-w-[700px] h-full min-h-[700px] border-2 border-gray-600 grid grid-cols-12 grid-rows-12 gap-0">
+      class="board bg-[#083163] bg-opacity-75 w-full md:max-w-[700px] h-full md:min-h-[700px] max-w-[400px] min-h-[400px] border-2 border-gray-600 grid grid-cols-12 grid-rows-12 gap-0">
     </div>
   </div>
-  <button class="flex mx-auto bg-black px-18 py-4 mt-6 text-2xl rounded-[6px] font-mono cursor-pointer">Reset</button>
+  <button
+    class="reset hover:bg-gray-800 transition-all duration-300 flex mx-auto bg-black md:px-18 md:py-4 px-12 py-2 mt-6 text-2xl rounded-[6px] font-mono cursor-pointer">Reset</button>
   <script src="script.js"></script>
 </body>
 

@@ -1,6 +1,7 @@
 
 const board = document.querySelector(".board");
 const snakeScore = document.querySelector('.score')
+const resetBtn = document.querySelector('.reset')
 
 let direction = "Right";
 let snake = [50];
@@ -42,9 +43,10 @@ function runBoard() {
     }
   });
 
-  setInterval(() => {
+  let interval = setInterval(() => {
     snake.forEach((pos) => {
       cells[pos].classList.remove("snake");
+      cells[snake[0]].classList.remove("snake-head")
     });
 
     let newHead;
@@ -60,6 +62,7 @@ function runBoard() {
     }
 
     if (newHead < 0 || newHead > 143) {
+      window.location.reload();
       return;
     }
 
@@ -95,10 +98,25 @@ function runBoard() {
 
     snake.forEach((pos) => {
       cells[pos].classList.add("snake");
+      cells[snake[0]].classList.add("snake-head")
     });
 
     console.log(snake);
   }, 500);
+  resetBtn.addEventListener('click', () => {
+    snake.forEach((pos) => {
+      cells[pos].classList.remove('snake')
+      cells[snake[0]].classList.remove("snake-head")
+    })
+
+    cells[food].classList.remove("food")
+    food = Math.floor(Math.random() * 144);
+    cells[food].classList.add("food")
+    snake = [50];
+    direction = 'Right';
+    score = 0;
+    snakeScore.textContent = `Score: ${score}`
+  })
 }
 
-runBoard();
+runBoard();           
