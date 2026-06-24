@@ -1,7 +1,6 @@
-
 const board = document.querySelector(".board");
-const snakeScore = document.querySelector('.score')
-const resetBtn = document.querySelector('.reset')
+const snakeScore = document.querySelector(".score");
+const resetBtn = document.querySelector(".reset");
 
 let direction = "Right";
 let snake = [50];
@@ -46,8 +45,8 @@ function runBoard() {
   let interval = setInterval(() => {
     snake.forEach((pos) => {
       cells[pos].classList.remove("snake");
-      cells[snake[0]].classList.remove("snake-head")
     });
+    cells[snake[0]].classList.remove("snake-head");
 
     let newHead;
 
@@ -85,38 +84,34 @@ function runBoard() {
 
       do {
         food = Math.floor(Math.random() * 144);
-      } while (snake.includes(food))
+      } while (snake.includes(food));
 
       cells[food].classList.add("food");
       score++;
-      snakeScore.textContent = `Score: ${score}`
-
-      console.log(score);
+      snakeScore.textContent = `HighScore: ${score}`;
     } else {
       snake.pop();
     }
 
     snake.forEach((pos) => {
       cells[pos].classList.add("snake");
-      cells[snake[0]].classList.add("snake-head")
+    });
+    cells[snake[0]].classList.add("snake-head");
+  }, 500);
+  resetBtn.addEventListener("click", () => {
+    cells[snake[0]].classList.remove("snake-head");
+    snake.forEach((pos) => {
+      cells[pos].classList.remove("snake");
     });
 
-    console.log(snake);
-  }, 500);
-  resetBtn.addEventListener('click', () => {
-    snake.forEach((pos) => {
-      cells[pos].classList.remove('snake')
-      cells[snake[0]].classList.remove("snake-head")
-    })
-
-    cells[food].classList.remove("food")
+    cells[food].classList.remove("food");
     food = Math.floor(Math.random() * 144);
-    cells[food].classList.add("food")
+    cells[food].classList.add("food");
     snake = [50];
-    direction = 'Right';
+    direction = "Right";
     score = 0;
-    snakeScore.textContent = `Score: ${score}`
-  })
+    snakeScore.textContent = `HighScore: ${score}`;
+  });
 }
 
-runBoard();           
+runBoard();

@@ -1,37 +1,50 @@
 # Snake Game 🐍
 
-A Snake Game built using HTML, CSS, Tailwind CSS, and JavaScript.
+A classic Snake Game built using HTML, CSS, Tailwind CSS, and JavaScript. This project was created to strengthen JavaScript fundamentals, DOM manipulation skills, and problem-solving abilities through game development.
 
-## Current Progress
+## Features
 
-The project is currently under development.
-
-### Completed Features
-
-- Game board created using CSS Grid
-- Snake movement
-- Keyboard controls
+- Responsive game board
+- Smooth snake movement
+- Keyboard controls (Arrow Keys)
 - Random food generation
 - Snake growth after eating food
-
-### Features In Progress
-
 - Wall collision detection
 - Self collision detection
-- Game Over screen
-- Score system
-- Restart functionality
-- Better food spawning logic
+- Reset game functionality
+- Snake head styling
+- High Score system using Local Storage
+- Mobile-friendly responsive layout
 
 ## Technologies Used
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - Tailwind CSS
-- JavaScript
+- JavaScript (ES6)
 
-## Status
+## Concepts Practiced
 
-🚧 Work in Progress
+- DOM Manipulation
+- Event Handling
+- Arrays and Array Methods
+- Game Loop with `setInterval`
+- Collision Detection
+- Local Storage
+- Responsive Design
+- State Management
 
-This project is being built to improve JavaScript problem-solving skills and understanding of DOM manipulation, arrays, events, and game logic.
+## Future Improvements
+
+- Game Over screen
+- Sound effects
+- Pause/Resume functionality
+- Touch controls for mobile devices
+- Difficulty levels
+- Score animations
+
+## Project Status
+
+✅ Active Development
+
+This project is part of my JavaScript learning journey and focuses on building strong problem-solving skills through real-world projects.
