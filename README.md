@@ -1,3 +1,4 @@
+- LIVE LINK - https://snake-game22.netlify.app/
 # Snake Game 🐍
 
 A classic Snake Game built using HTML, CSS, Tailwind CSS, and JavaScript. This project was created to strengthen JavaScript fundamentals, DOM manipulation skills, and problem-solving abilities through game development.
